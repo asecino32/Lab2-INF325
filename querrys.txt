@@ -1,0 +1,18 @@
+
+use Steam (crea la base de datos)
+
+db.Games
+
+
+Consultas pregunta 3:
+1)
+db.Games.find({ release_date: { $regex: /20(1[5-9]|[2-9][0-9])/ } }, { name: 1, price: 1, release_date: 1, _id: 0 }).sort({ price: -1 }).limit(10).pretty()
+
+2)
+db.Games.find({required_age: {$eq: 0}}, {name: 1, genres: 1, score_rank: 1, user_score: 1, price: 1, _id: 0 }).sort({user_score: -1}).limit(5).pretty()
+
+3)
+a)db.Games.find({ price: { $lte: 10 } },{ name: 1, user_score: 1, price: 1, _id: 0 }).sort({ user_score: -1 }).limit(5).pretty()
+b)db.Games.find({ price: { $gt: 10, $lte: 30 } },{ name: 1, user_score: 1, price: 1, _id: 0  }).sort({ user_score: -1 }).limit(5).pretty()
+c)db.Games.find({ price: { $gt: 30 } },{ name: 1, user_score: 1, price: 1, _id: 0  }).sort({ user_score: -1 }).limit(5).pretty()
+
