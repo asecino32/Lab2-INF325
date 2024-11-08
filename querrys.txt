@@ -3,6 +3,8 @@ use Steam (crea la base de datos)
 
 db.Games
 
+para subir la data se uso el siguiente comando en mongoshell:
+mongoimport --collection='Games' --file='Games.json'
 
 Consultas pregunta 3:
 1)
